@@ -23,6 +23,16 @@ BRIER_BASELINE, LOGLOSS_BASELINE = 0.25, 0.6931
 Z95, Z80 = 1.959964, 0.841621
 
 app = Flask(__name__)
+from flask_cors import CORS
+
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+    response.headers['Access-Control-Allow-Methods'] = 'GET,POST,OPTIONS'
+    return response
 
 # CORS — el motor corre en el navegador, la API en otro origen.
 # En producción, restringir ALLOWED_ORIGIN al dominio real de la app.
