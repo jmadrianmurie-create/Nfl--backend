@@ -1,5 +1,0 @@
-flask
-flask-cors
-gunicorn
-pandas
-nfl_data_py
