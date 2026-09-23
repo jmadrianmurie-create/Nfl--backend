@@ -1,4 +1,4 @@
-"""
+lo"""
 backend/nfl_data_loader.py — ingesta oficial vía nflreadpy (nflverse).
 
 Requiere conexión a internet y la librería instalada:
